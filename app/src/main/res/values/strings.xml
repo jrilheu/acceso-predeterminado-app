@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Acceso Predeterminado</string>
+    <string name="tile_label">Apps predeterminadas</string>
+    <string name="instructions_title">Cómo añadir el tile</string>
+    <string name="instructions_body">1. Desliza hacia abajo dos veces para abrir Ajustes rápidos.\n\n2. Toca el lápiz o el botón de editar.\n\n3. Busca «Apps predeterminadas» y arrástralo al panel.\n\n4. Guarda los cambios.\n\nAl tocar el tile se abre la pantalla del sistema de aplicaciones predeterminadas.</string>
+    <string name="instructions_note">Este prototipo solo es un acceso directo. No cambia ningún valor predeterminado por sí solo.</string>
+</resources>
