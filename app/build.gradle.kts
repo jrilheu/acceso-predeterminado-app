@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.josejr.accesopredeterminado"
+    namespace = "com.jrilhe.accesopredeterminado"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.josejr.accesopredeterminado"
+        applicationId = "com.jrilhe.accesopredeterminado"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

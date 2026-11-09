@@ -47,7 +47,7 @@ El APK queda en `app\build\outputs\apk\debug\app-debug.apk`.
 
 ## Detalles técnicos
 
-- **applicationId / package:** `com.josejr.accesopredeterminado`
+- **applicationId / package:** `com.jrilhe.accesopredeterminado`
 - **minSdk:** 24 · **targetSdk / compileSdk:** 36
 - **Clases principales:**
   - `DefaultAppsTileService` — `TileService` con `BIND_QUICK_SETTINGS_TILE`

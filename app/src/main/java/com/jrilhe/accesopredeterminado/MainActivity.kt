@@ -1,4 +1,4 @@
-package com.josejr.accesopredeterminado
+package com.jrilhe.accesopredeterminado
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
