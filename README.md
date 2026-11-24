@@ -1,8 +1,8 @@
-# Acceso Predeterminado (prototipo)
+# Acceso Predeterminado
 
-Prototipo personal en Kotlin: un **tile de Ajustes rápidos** que abre la pantalla del sistema de **aplicaciones predeterminadas**.
+App personal en Kotlin: un **tile de Ajustes rápidos** que abre la pantalla del sistema de **aplicaciones predeterminadas**.
 
-No cambia ningún valor predeterminado por código; solo es un acceso directo (estilo Caffeine, pero de atajo a Ajustes).
+Es un acceso directo; no cambia ningún valor predeterminado por código.
 
 ## Requisitos
 
@@ -18,17 +18,32 @@ No cambia ningún valor predeterminado por código; solo es un acceso directo (e
 3. Conecta un dispositivo con depuración USB o inicia un emulador.
 4. Pulsa **Run** (▶) o genera el APK de depuración:
    - Menú **Build → Build Bundle(s) / APK(s) → Build APK(s)**
-5. Desde terminal (opcional), con el JDK de Android Studio:
+5. Desde terminal (opcional):
 
 ```bat
 cd C:\Sources\Android\acceso-predeterminado-prototipo
-set JAVA_HOME=C:\Program Files\Android\Android Studio\jbr
+set JAVA_HOME=C:\Users\jilhe\.jdks\jbr-21.0.11
 gradlew.bat assembleDebug
 ```
 
 El APK queda en `app\build\outputs\apk\debug\app-debug.apk`.
 
-## Cómo añadir el tile (Jose Jr.)
+## APK release (privado / sideload)
+
+1. Asegura `keystore.properties` y el `.jks` en la raíz (no van a git; hay `keystore.properties.example`).
+2. Compila el APK firmado:
+
+```bat
+cd C:\Sources\Android\acceso-predeterminado-prototipo
+set JAVA_HOME=C:\Users\jilhe\.jdks\jbr-21.0.11
+gradlew.bat assembleRelease
+```
+
+3. El APK queda en `app\build\outputs\apk\release\app-release.apk`.
+4. Cópialo al teléfono e instálalo (permite «Instalar apps desconocidas» si Android lo pide).
+5. Si ya tenías la versión debug con el mismo `applicationId`, desinstálala antes: la firma es distinta.
+
+## Cómo añadir el tile
 
 1. Instala e inicia la app una vez (así Android registra el servicio del tile).
 2. Desliza hacia abajo **dos veces** para abrir el panel de Ajustes rápidos.
@@ -48,6 +63,7 @@ El APK queda en `app\build\outputs\apk\debug\app-debug.apk`.
 ## Detalles técnicos
 
 - **applicationId / package:** `com.jrilhe.accesopredeterminado`
+- **versionName:** 1.0.1 · **versionCode:** 2
 - **minSdk:** 24 · **targetSdk / compileSdk:** 36
 - **Clases principales:**
   - `DefaultAppsTileService` — `TileService` con `BIND_QUICK_SETTINGS_TILE`
